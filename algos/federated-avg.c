@@ -10,7 +10,7 @@ void client_update(int client_id) {
        client[client_id][i] = global[i] + (rand() % 10) * 0.01;  
     }
 }
-void federated_avg() {
+void avg() {
     for (int i = 0; i < WEIGHTS; i++) {
         float sum = 0;
         for (int c = 0; c < CLIENTS; c++) {
@@ -28,7 +28,7 @@ int main() {
         for (int c = 0; c < CLIENTS; c++) {
             client_update(c);
         }
-        federated_avg();
+        avg();
         printf("Round %d: [%f, %f]\n", round+1, global[0], global[1]);
     }
      return 0;
