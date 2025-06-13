@@ -4,7 +4,7 @@
 #define WEIGHTS 2
 float global[WEIGHTS] = {0.5, 0.3};
 float client[CLIENTS][WEIGHTS];
-
+//we have assumed the update to be random but it will be calculated as per calculations on individual devices by training data
 void client_update(int client_id) {
     for (int i = 0; i < WEIGHTS; i++) {
        client[client_id][i] = global[i] + (rand() % 10) * 0.01;  
